@@ -43,7 +43,6 @@ form.addEventListener("submit", function (e) {
   const size = fontSizeInput.value;
   const color = fontColorInput.value;
 
-  // Save in cookies
   setCookie("fontsize", size);
   setCookie("fontcolor", color);
 
