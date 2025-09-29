@@ -3,7 +3,6 @@ const form = document.querySelector("form");
 const fontSizeInput = document.getElementById("fontsize");
 const fontColorInput = document.getElementById("fontcolor");
 
-// ✅ Helper to set a cookie
 function setCookie(name, value, days = 365) {
   const d = new Date();
   d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
@@ -11,7 +10,6 @@ function setCookie(name, value, days = 365) {
   document.cookie = `${name}=${value};${expires};path=/`;
 }
 
-// ✅ Helper to get a cookie
 function getCookie(name) {
   const decodedCookie = decodeURIComponent(document.cookie);
   const ca = decodedCookie.split(";");
@@ -25,7 +23,6 @@ function getCookie(name) {
   return null;
 }
 
-// ✅ Apply preferences from cookies
 function applyPreferences() {
   const savedSize = getCookie("fontsize");
   const savedColor = getCookie("fontcolor");
@@ -40,7 +37,6 @@ function applyPreferences() {
   }
 }
 
-// ✅ Save preferences on form submit
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -51,9 +47,7 @@ form.addEventListener("submit", function (e) {
   setCookie("fontsize", size);
   setCookie("fontcolor", color);
 
-  // Apply immediately
   applyPreferences();
 });
 
-// Apply saved prefs when page loads
 applyPreferences();
