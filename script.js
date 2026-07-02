@@ -46,10 +46,10 @@ const fontSize = document.querySelector("#fontsize");
 const fontColor = document.querySelector("#fontcolor");
 
 window.addEventListener("load", () => {
-	const cookies = document.cookie.split(";");
+	const cookies = document.cookie.split("; ");
 
 	cookies.forEach((cookie) => {
-		const [key, value] = cookie.split("=");
+		const [key, value] = cookie.split("= ");
 
 		if (key === "fontsize") {
 			document.documentElement.style.setProperty("--fontsize", value);
